@@ -1,0 +1,105 @@
+.headerBack {
+  background-color: $colorBlue;
+  .header {
+    background-color: $colorBlue;
+    width: 100%;
+    height: auto;
+    padding-top: 24px;
+    padding: 24px 20px 0 20px;
+    position: relative;
+    &-logo {
+      display: flex;
+      align-items: center;
+      width: 240px;
+      margin: 0 auto;
+      margin-bottom: 36.4PX;
+      img {
+        width: 51.6px;
+        height: 51.6px;
+      }
+      h1 {
+        text-align: center;
+        margin-left: 14.4px;
+        @include Yugo($colorBlack,20px,700);
+      }
+    }
+  
+    &-ttl {
+      padding-bottom: 114px;
+      &__txt {
+        p {
+          background-color: $colorWhite;
+          margin-bottom: 9px;
+          font-size: 26px;
+          font-weight: bold;
+          text-align: left;
+          display: inline-block;
+          padding: 16px 18px 17px 12px;
+        }
+      }
+      &__txt {
+        p{
+          background-color: $colorWhite;
+          font-size: 26px;
+          font-weight: bold;
+          text-align: left;
+          display: inline-block;
+          padding: 18px 20px 16px 15px;
+        }
+      }
+    }
+  
+    &-arrow {
+      position: absolute;
+      top: 96%;
+      left: 50%;
+      width: 30px;
+      height: 30px;
+      border: 6px solid;
+      border-color: transparent transparent $colorBlack $colorBlack;
+      transform: rotate(-45deg) translateX(-50%);
+  
+    }
+  }
+}
+
+@media screen and(min-width: 1280px) {
+  .headerBack {
+    .header {
+      height: 100vh;
+      width: 1004px;
+      margin: 0 auto;
+      padding: 0;
+      padding-top: 24px;
+      &-logo {
+        margin-bottom: 141px;
+      }
+    
+      &-ttl {
+        &__txt {
+          p {
+            background-color: $colorWhite;
+            margin-bottom: 26px;
+            @include Yugo($colorBlack,80px,700);
+            font-weight: bold;
+            text-align: left;
+            padding: 50px 42px 50px 35px;
+          }
+        }
+        &__txt {
+          p {
+            background-color: $colorWhite;
+            @include Yugo($colorBlack,80px,700);
+            font-weight: bold;
+            text-align: left;
+            padding: 53px 54px 47px 47px;
+          }
+        }
+      }
+    
+      &-arrow {
+        top: 100%;
+      }
+    }
+    }
+  }

@@ -1,0 +1,538 @@
+@charset "UTF-8";
+
+$colorBlack: #0A0A0A;
+$colorBlack: #222222;
+$colorWhite: #FFFFFF;
+$colorGrayf: #707070;
+$colorBlue:  #C4CCEB;
+
+
+@mixin Yugo($fcolor: #fff,$fontSize: 16px, $fontWeight: 700) {
+  color: $fcolor;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  font-family: "Yu Gothic", "游ゴシック", "YuGothic", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+}
+
+@mixin Mon($fcolor: #fff,$fontSize: 16px, $fontWeight: 700) {
+  color: $fcolor;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans CJK JP", "Yu Gothic", "游ゴシック", "YuGothic",
+  "游ゴシック体", "Montserrat", "sans-serif";
+  font-weight: 500;
+  color: #333;
+  line-height: 2;
+  letter-spacing: 0.1em;
+  font-size:1.6rem;/* 16px*/
+
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+ol,
+ul,
+li,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.6s ease;
+  &:hover {
+    transition: all 0.6s ease;
+    opacity: 0.6;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+@import "header.scss";
+@import "footer.scss";
+
+
+.startBack {
+  background-color: $colorBlue;
+  .start {
+    background-color: $colorBlue;
+    padding-top: 50px;
+    padding-bottom: 140px;
+    &-logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 94px;
+      h2 {
+        padding: 0 11px;
+        @include Mon($colorBlack,19px,1000);
+        font-weight: lighter;
+      }
+    }
+    &-container {
+      border: solid 8px $colorWhite;
+      border-radius: 25px;
+      width: calc(100% - 40px);
+      margin: 0 auto;
+      text-align: center;
+      padding: 52px 30px 72px 30px;
+      p:nth-of-type(1) {
+        @include Yugo($colorBlack,80px,700);
+        position: relative;
+      }
+      p:nth-of-type(1)::after {
+        content: '点';
+        @include Yugo($colorBlack,50px,700);
+        margin-left: 7px;
+      }
+
+      p:nth-of-type(1)::before {
+        position: absolute;
+        top: 103%;
+        left: 4%;
+        content: '';
+        background-image: url("../img/bg-stripe.png");
+        height: 18px;
+        width: 277px;
+      }
+
+      p:nth-of-type(2) {
+        @include Yugo($colorBlack,18px,400);
+        font-weight: bold;
+        text-align: left;
+        position: relative;
+        margin-top: 80px;
+      }
+      // p:nth-of-type(2)::before {
+      //   position: absolute;
+      //   top: -50%;
+      //   left: 2%;
+      //   content: '';
+      //   background-image: url("../img/bg-stripe.png");
+      //   height: 18px;
+      //   width: 277px;
+      //   margin-bottom: 70px;
+      // }
+    }
+  }
+}
+
+.bookBack {
+  background-color: $colorBlue;
+  .book {
+    text-align: center;
+    width: 335px;
+    margin: 0 auto;
+    padding-bottom: 111px;
+    &-ttl {
+      margin-bottom: 66.5px;
+      position: relative;
+      padding: 0 40px;
+      h2 {
+        @include Yugo($colorBlack,23px,400);
+        font-weight: bold;
+      }
+    }
+    &-ttl p:before {
+      content: '';
+      position: absolute;
+      top: 59%;
+      left: 5%;
+      display: inline-block;
+      width: 28px;
+      height: 4px;
+      background-color:$colorWhite;
+      transform: rotate(-120deg);
+      border-radius: 11px;
+    }
+    &-ttl p:after {
+      content: '';
+      position: absolute;
+      top: 56%;
+      right: 7%;
+      display: inline-block;
+      width: 28px;
+      height: 4px;
+      background-color:$colorWhite;
+      transform: rotate(-60deg);
+      border-radius: 11px;
+    }
+  
+    &-container {
+        img {
+          margin: 0 auto;
+          // background-image: url("../img/book.png");
+          // padding-bottom: 500px;
+          // background-repeat: no-repeat;
+          box-shadow: 13px -17px;
+        }
+      &__txt {
+        &Box {
+          margin-top: 70px;
+          margin-bottom: 50px;
+          text-align: left;
+          p {
+            @include Yugo($colorBlack,16px,400);
+            font-weight: bold;
+          }
+        }
+      
+        &Buttom {
+          width: calc(100% - 45px);
+          margin: 0 auto;
+          background-color: $colorWhite;
+          border-radius: 51px;
+          box-shadow: 4px 7px;
+          a {
+            @include Mon($colorBlack,40px,400);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.menber {
+  padding-top: 124px;
+  padding-bottom: 174px;
+  text-align: center;
+  width: 335px;
+  margin: 0 auto;
+  &-jhon {
+    margin-bottom: 140px;
+    img {
+      margin-bottom: 39px;
+    }
+    p:nth-of-type(1){
+      margin-bottom: 20px;
+      text-align: left;
+      @include Yugo($colorBlack,30px,400);
+      font-weight: bold;
+    }
+    p:nth-of-type(2){
+      margin-bottom: 20px;
+      text-align: left;
+      @include Yugo($colorBlack,16px,400);
+      font-weight: bold;
+    }
+    p:nth-of-type(3){
+      margin-bottom: 10px;
+      text-align: left;
+      @include Yugo($colorBlack,15px,400);
+      font-weight: bold;
+    }
+    p:nth-of-type(4){
+      text-align: left;
+      @include Yugo($colorBlack,15px,400);
+      font-weight: bold;
+    }
+  }
+
+  &-joanna {
+    img {
+      margin-bottom: 39px;
+    }
+    p:nth-of-type(1){
+      margin-bottom: 20px;
+      text-align: left;
+      @include Yugo($colorBlack,30px,400);
+      font-weight: bold;
+    }
+    p:nth-of-type(2){
+      margin-bottom: 20px;
+      text-align: left;
+      @include Yugo($colorBlack,16px,400);
+      font-weight: bold;
+    }
+    p:nth-of-type(3){
+      margin-bottom: 10px;
+      text-align: left;
+      @include Yugo($colorBlack,15px,400);
+      font-weight: bold;
+    }
+    p:nth-of-type(4){
+      text-align: left;
+      @include Yugo($colorBlack,15px,400);
+      font-weight: bold;
+    }
+  }
+
+}
+
+
+@media screen and(min-width: 1280px) {
+  .startBack {
+    background-color: $colorBlue;
+    .start {
+      max-width: 1004px;
+      margin: 0 auto;
+      padding-top: 269px;
+      &-logo {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 94px;
+        img {
+          width: 83px;
+        }
+        h2 {
+          padding: 0 11px;
+          @include Mon($colorBlack,50px,1000);
+          font-weight: lighter;
+        }
+      }
+      &-container {
+        border: solid 8px $colorWhite;
+        border-radius: 25px;
+        text-align: center;
+        padding: 100px 138px 52px 190px;
+        width: 100%;
+        p:nth-of-type(1) {
+          @include Yugo($colorBlack,160px,700);
+        }
+        p:nth-of-type(1)::after {
+          content: '点';
+          @include Yugo($colorBlack,100px,700);
+          margin-left: 7px;
+        }
+        p:nth-of-type(1)::before {
+          position: absolute;
+          top: 103%;
+          left: 4%;
+          content: '';
+          background-image: url("../img/bg-stripe.png");
+          height: 18px;
+          width: 546px;
+        }
+        p:nth-of-type(2) {
+          letter-spacing: 0;
+          margin-bottom: 70px;
+          letter-spacing: 2px;
+          @include Yugo($colorBlack,30px,700);
+          span {
+            display: inline;
+            letter-spacing: 2px;
+          }
+        }
+        // p:nth-of-type(2)::before {
+        //   position: absolute;
+        //   top: -48%;
+        //   left: 4%;
+        //   content: '';
+        //   background-image: url("../img/bg-stripe.png");
+        //   height: 18px;
+        //   width: 546px;
+        //   margin-bottom: 70px;
+        // }
+    
+        p:nth-of-type(3) {
+          @include Yugo($colorBlack,30px,400);
+          font-weight: bold;
+          text-align: left;
+        }
+      }
+    }
+  }
+  
+  .bookBack {
+    background-color: $colorBlue;
+    .book {
+      text-align: center;
+      width: 1004px;
+      margin: 0 auto;
+      padding-bottom: 239px;
+      &-ttl {
+        margin-bottom: 106px;
+        position: relative;
+        padding: 0 40px;
+        h2 {
+          @include Yugo($colorBlack,80px,400);
+          font-weight: bold;
+        }
+      }//book-ttl
+      &-ttl p:before {
+        content: '';
+        top: 59%;
+        left: 0%;
+        display: inline-block;
+        width: 95px;
+        height: 13px;
+        background-color:$colorWhite;
+        transform: rotate(-120deg);
+      }
+      &-ttl p:after {
+        content: '';
+        position: absolute;
+        top: 69%;
+        right: 1%;
+        display: inline-block;
+        width: 95px;
+        height: 13px;
+        background-color:$colorWhite;
+        transform: rotate(-60deg);
+      }
+    
+      &-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+          img {
+            margin: 0;
+            width: 32%;
+            box-shadow: 13px -17px;
+          }
+        &__txt {
+          width: 55%;
+          &Box {
+            margin-top: 0;
+            margin-bottom: 34px;
+            text-align: left;
+            p {
+              @include Yugo($colorBlack,20px,400);
+              font-weight: bold;
+              line-height: 34px;
+              letter-spacing: -1px;
+            }
+          }
+        
+          &Buttom {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: $colorWhite;
+            border-radius: 51px;
+            box-shadow: 6px 12px;
+            padding: 20px 74px 20px 114px;
+            a {
+              @include Mon($colorBlack,40px,400);
+            }
+          }
+        }
+      }
+    }//book
+  }//bookBack
+  
+  .menber {
+    padding-top: 124px;
+    padding-bottom: 174px;
+    text-align: center;
+    width: 1004px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    &-jhon {
+      margin-bottom: 140px;
+      width: 40%;
+      text-align: center;
+      img {
+        margin-bottom: 107px;
+        width: 324px;
+      }
+      p:nth-of-type(1){
+        margin-bottom: 20px;
+        text-align: left;
+        @include Yugo($colorBlack,30px,400);
+        font-weight: bold;
+      }
+      p:nth-of-type(2){
+        margin-bottom: 20px;
+        text-align: left;
+        @include Yugo($colorBlack,16px,400);
+        font-weight: bold;
+      }
+      p:nth-of-type(3){
+        margin-bottom: 10px;
+        text-align: left;
+        @include Yugo($colorBlack,15px,400);
+        font-weight: bold;
+      }
+      p:nth-of-type(4){
+        text-align: left;
+        @include Yugo($colorBlack,15px,400);
+        font-weight: bold;
+      }
+    }
+  
+    &-joanna {
+      width: 40%;
+      text-align: center;
+      img {
+        margin-bottom: 107px;
+        width: 324px;
+      }
+      p:nth-of-type(1){
+        margin-bottom: 20px;
+        text-align: left;
+        @include Yugo($colorBlack,30px,400);
+        font-weight: bold;
+      }
+      p:nth-of-type(2){
+        margin-bottom: 20px;
+        text-align: left;
+        @include Yugo($colorBlack,16px,400);
+        font-weight: bold;
+      }
+      p:nth-of-type(3){
+        margin-bottom: 10px;
+        text-align: left;
+        @include Yugo($colorBlack,15px,400);
+        font-weight: bold;
+      }
+      p:nth-of-type(4){
+        text-align: left;
+        @include Yugo($colorBlack,15px,400);
+        font-weight: bold;
+      }
+    }
+  }
+
+
+
+
+  
+}
